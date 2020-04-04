@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+<div class="ui main text container segment">
+  <div class="ui huge header">Edit <%= note.title %></div>
+   
+    <form class="ui form" action="/indexnote/<%= note._id %>?_method=PUT" method="POST">
+        <div class="field">
+        <label>Title</label>
+        <input type="text" name="note[title]" value="<%= note.title %>">    
+        </div> 
+        <div class="field">
+        <label>Video</label>
+         <input type="text" name="note[image]" value="<%= note.image %>">
+        </div>
+        <div class="field">
+        <label>Blog Content</label>
+        <textarea name="note[body]"><%= note.body %></textarea>
+        </div>
+        <button class="ui green  basic button">
+        <i class="icon upload"></i> UPDATE</button>
+          
+    </form>
+
+</div>
+
+<% include ../partials/footer %>

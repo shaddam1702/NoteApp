@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+  <div class="ui huge header"><%= note.title %></div>
+     <div class="ui top attached">
+        <div class="item">
+        
+          <div class="image">
+                    <img src="<%= note.image %>">
+                </div>
+           <div class="content">
+             <span><%= note.created %></span>  
+            
+           </div>
+            
+            <div class="description">
+             <p><%- note.body %></p>
+            </div>
+             <a class="ui green basic button" href="/indexnote/<%= note._id %>/edit">Edit</a>
+            <form id="delete" action="/indexnote/<%= note._id %>?_method=DELETE" method="POST">
+            
+             <button class="ui red basic button">Delete</button>
+            </form>
+           
+         
+         </div>
+      
+     </div>
+    
+  </div>
+
+<% include ../partials/footer %>
+
