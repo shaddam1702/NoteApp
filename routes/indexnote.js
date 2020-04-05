@@ -1,6 +1,7 @@
 var   express         = require("express");
 var   router          = express.Router();
 var   Note      = require("../models/note");
+const verify = require('./verifyToken');
 // var   middleware     = require("../middleware");
 
 

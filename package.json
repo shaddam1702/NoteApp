@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shaddam",
   "license": "ISC",
@@ -18,5 +18,8 @@
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.7.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

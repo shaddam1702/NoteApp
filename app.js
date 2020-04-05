@@ -15,7 +15,10 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(indexnoteRoute); 
-
+app.get("/",function(req,res){
+    
+    res.render("landing");
+})
 app.use('/api/user',authRoute);
 app.use('/api/post',postRoute);
 app.listen(3300,function(){
