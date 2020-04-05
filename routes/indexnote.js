@@ -20,7 +20,7 @@ router.get("/indexnote",function(req,res){
    });
 });
 
-router.get("/indexnote/new",function(req,res){
+router.get("/indexnote/new",verify,function(req,res){
    
     res.render("note/new"); 
 });
@@ -37,7 +37,7 @@ router.post("/indexnote",function(req,res){
    }) ;
 });
 
-router.get("/indexnote/:id",function(req,res){
+router.get("/indexnote/:id",verify,function(req,res){
     
        Note.findById(req.params.id,function(err,foundnote){
         
@@ -66,7 +66,7 @@ router.get("/indexnote/:id/edit",function(req,res){
 });
 
 //Update Route
-router.put("/indexnote/:id",function(req,res){
+router.put("/indexnote/:id",verify,function(req,res){
     Note.findByIdAndUpdate(req.params.id,req.body.note,function(err,updatedNote){
         
         if(err){
@@ -79,7 +79,7 @@ router.put("/indexnote/:id",function(req,res){
     
 });
 
-router.delete("/indexnote/:id",function(req,res){
+router.delete("/indexnote/:id",verify,function(req,res){
     
     Note.findByIdAndRemove(req.params.id,function(err){
         if(err){
